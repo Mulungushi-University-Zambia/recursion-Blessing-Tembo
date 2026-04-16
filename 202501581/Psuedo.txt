@@ -1,0 +1,25 @@
+START
+
+DEFINE function factorial(n)
+    SET result = 1
+
+    FOR i from 1 to n
+        result = result × i
+    END FOR
+
+    RETURN result
+END FUNCTION
+
+
+DISPLAY "Enter a number: "
+INPUT num
+
+IF num <= 0 THEN
+    DISPLAY "Please enter a positive number."
+ELSE
+    SET result = factorial(num)
+    DISPLAY "Factorial:"
+    DISPLAY result
+END IF
+
+END

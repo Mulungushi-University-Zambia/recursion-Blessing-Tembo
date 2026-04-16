@@ -1,0 +1,32 @@
+START
+
+DEFINE function fibonacci(n)
+    CREATE empty list called sequence
+
+    SET a = 0
+    SET b = 1
+
+    FOR i from 0 to n - 1
+        ADD a to sequence
+        SET temp = a + b
+        SET a = b
+        SET b = temp
+    END FOR
+
+    RETURN sequence
+END FUNCTION
+
+
+DISPLAY "Enter a number: "
+INPUT num
+CONVERT input to integer
+
+IF num <= 0 THEN
+    DISPLAY "Please enter a positive number."
+ELSE
+    SET result = fibonacci(num)
+    DISPLAY "Fibonacci sequence:"
+    DISPLAY result
+END IF
+
+END
